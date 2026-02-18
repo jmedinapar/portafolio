@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1890ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#096dd9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Accent line -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accentGradient)"/>
+  
+  <!-- Left content -->
+  <text x="60" y="200" font-family="'Courier New', monospace" font-size="72" font-weight="900" fill="white">
+    Juan Medina
+  </text>
+  
+  <text x="60" y="280" font-family="'Courier New', monospace" font-size="48" font-weight="300" fill="#1890ff">
+    Frontend Developer
+  </text>
+  
+  <text x="60" y="360" font-family="Arial, sans-serif" font-size="24" fill="#b0b0b0">
+    React · TypeScript · Ant Design
+  </text>
+  
+  <!-- Tech stack icons/text -->
+  <text x="60" y="440" font-family="Arial, sans-serif" font-size="18" fill="#808080">
+    5+ años de experiencia en desarrollo web
+  </text>
+  
+  <!-- Right side - JM box -->
+  <rect x="900" y="150" width="200" height="200" rx="30" fill="black" stroke="#1890ff" stroke-width="3"/>
+  <text x="1000" y="275" font-family="'Courier New', monospace" font-size="120" font-weight="900" fill="white" text-anchor="middle">JM</text>
+  
+  <!-- Bottom accent -->
+  <rect x="0" y="626" width="1200" height="4" fill="url(#accentGradient)"/>
+</svg>
