@@ -1,0 +1,10 @@
+$mobile: 576px;
+$tablet: 768px;
+
+.hero {
+  padding: 100px 0;
+
+  @media (max-width: $mobile) {
+    padding: 60px 20px;
+  }
+}

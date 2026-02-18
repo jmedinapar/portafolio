@@ -1,0 +1,37 @@
+.experience {
+  padding: 120px 24px;
+}
+
+.experience__container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience__card {
+  margin-top: 32px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.experience__title {
+  text-align: center;
+  margin-bottom: 40px !important;
+}
+
+.experience__list {
+  margin-top: 16px;
+  padding-left: 20px;
+
+  li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+}
+
+.experience__tags {
+  margin-top: 16px;
+}

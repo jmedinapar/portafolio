@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Rounded square background -->
+  <rect x="20" y="20" width="160" height="160" rx="25" fill="black"/>
+  <!-- JM Text -->
+  <text x="100" y="135" font-family="'Courier New', monospace" font-size="120" font-weight="900" fill="white" text-anchor="middle" letter-spacing="0">JM</text>
+</svg>
