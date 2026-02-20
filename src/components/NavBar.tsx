@@ -1,33 +1,31 @@
-import { Layout, Menu, Drawer, Button, Grid, Switch, Typography } from 'antd';
-import { MenuOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons';
+import { Layout, Menu, Drawer, Button, Grid, Switch, Typography } from 'antd'
+import { MenuOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons'
 
-import { useState } from 'react';
-import useActiveSection from '../hooks/useActiveSection';
+import { useState } from 'react'
+import useActiveSection from '../hooks/useActiveSection'
 
-const { Header } = Layout;
+const { Header } = Layout
 
-const { Title } = Typography;
+const { Title } = Typography
 
-const { useBreakpoint } = Grid;
+const { useBreakpoint } = Grid
 
 interface NavBarProps {
-  toggleTheme: () => void;
-  themeMode: 'light' | 'dark';
+  toggleTheme: () => void
+  themeMode: 'light' | 'dark'
 }
 
 const NavBar = (props: NavBarProps) => {
-  const screens = useBreakpoint();
+  const screens = useBreakpoint()
 
-  const [open, setOpen] = useState(false);
-  const activeSection = useActiveSection(['home', 'skills', 'experience', 'contact']);
+  const [open, setOpen] = useState(false)
+  const activeSection = useActiveSection(['home', 'experience', 'contact'])
 
   const menuItems = [
     { key: 'home', label: <a href="#home">Home</a> },
-    { key: 'skills', label: <a href="#skills">Skills</a> },
     { key: 'experience', label: <a href="#experience">Experiencia</a> },
     { key: 'contact', label: <a href="#contact">Contacto</a> },
-    // { key: 'projects', label: <a href="#projects">Projects</a> },
-  ];
+  ]
 
   return (
     <Header
@@ -85,7 +83,7 @@ const NavBar = (props: NavBarProps) => {
         />
       </Drawer>
     </Header>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

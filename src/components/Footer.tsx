@@ -1,8 +1,8 @@
-import { Button, Layout } from 'antd';
+import { Button, Layout } from 'antd'
 
-import { GithubOutlined, LinkedinOutlined, MailOutlined } from '@ant-design/icons';
+import { LinkedinOutlined } from '@ant-design/icons'
 
-const { Footer: AntFooter } = Layout;
+const { Footer: AntFooter } = Layout
 
 const Footer = () => {
   return (
@@ -19,9 +19,11 @@ const Footer = () => {
 
         {/* <MailOutlined style={{ fontSize: 20 }} /> */}
       </div>
-      <div>© {new Date().getFullYear()} Juan Medina - Built with React & TypeScript.</div>
+      <div>
+        © {new Date().getFullYear()} Juan Medina - v{__APP_VERSION__}
+      </div>
     </AntFooter>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

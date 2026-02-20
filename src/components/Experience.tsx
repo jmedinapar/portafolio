@@ -1,8 +1,8 @@
-import { Card, Typography, Tag, Space, Divider } from 'antd';
+import { Card, Typography, Tag, Space, Divider, Image } from 'antd'
 
-const { Title, Text, Paragraph } = Typography;
+const { Title, Text, Paragraph } = Typography
 
-import './Experience.scss';
+import './Experience.scss'
 
 const item_list = [
   'Desarrollo de módulo centralizado para visualización integral de información del paciente.',
@@ -16,7 +16,7 @@ const item_list = [
   'Refactorización y mantenimiento de código legacy en PHP y Ruby on Rails.',
   'Integración y consumo de APIs REST desarrolladas en Laravel.',
   'Revisión de código y promoción de buenas prácticas dentro del equipo de desarrollo.',
-];
+]
 
 const stack_list = [
   'React',
@@ -30,7 +30,7 @@ const stack_list = [
   'SQL',
   'MySQL',
   'Git',
-];
+]
 
 const Experience = () => {
   return (
@@ -49,9 +49,10 @@ const Experience = () => {
 
           <Divider />
           <Paragraph>
-            Desarrollo y mantenimiento de un sistema clínico interno utilizado diariamente por
-            personal médico y administrativo para la gestión de pacientes, hospitalización, citas
-            médicas, atención psicológica, documentación de heridas e intervenciones quirúrgicas.
+            Desarrollo y mantenimiento de un sistema clínico interno utilizado diariamente
+            por personal médico y administrativo para la gestión de pacientes,
+            hospitalización, citas médicas, atención psicológica, documentación de heridas
+            e intervenciones quirúrgicas.
           </Paragraph>
 
           <Title level={5}>Responsabilidades</Title>
@@ -67,10 +68,23 @@ const Experience = () => {
               <Tag key={index}>{tech}</Tag>
             ))}
           </Space>
+
+          <div className="experience__image">
+            <Image
+              src={`${import.meta.env.BASE_URL}referencia-documentacion-herida.png`}
+              alt="Formulario documentación de herida"
+              loading="lazy"
+            />
+            <Paragraph type="secondary" style={{ marginTop: '24px' }}>
+              Ejemplo de formulario clínico complejo para documentación de heridas,
+              desarrollado en React con Ant Design, para registrar información detallada
+              de heridas y su evolución.
+            </Paragraph>
+          </div>
         </Card>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Experience;
+export default Experience

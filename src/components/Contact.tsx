@@ -1,43 +1,43 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import { Row, Col, Typography, Form, Input, Button, message, Card } from 'antd';
+import { Row, Col, Typography, Form, Input, Button, message, Card } from 'antd'
 
-import { MailOutlined } from '@ant-design/icons';
+import { MailOutlined } from '@ant-design/icons'
 
-import './Contact.scss';
-import emailjs from '@emailjs/browser';
+import './Contact.scss'
+import emailjs from '@emailjs/browser'
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph } = Typography
 
 interface IContantFormValues {
-  name: string;
-  email: string;
-  message: string;
+  name: string
+  email: string
+  message: string
 }
 
 const Contact = () => {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (values: IContantFormValues) => {
-    setLoading(true);
+    setLoading(true)
     try {
       await emailjs.send(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         values as any,
-        import.meta.env.VITE_EMAIL_PUBLIC_KEY
-      );
+        import.meta.env.VITE_EMAIL_PUBLIC_KEY,
+      )
 
-      message.success('Mensaje enviado correctamente');
-      form.resetFields();
+      message.success('Mensaje enviado correctamente')
+      form.resetFields()
     } catch (error) {
-      message.error('Error al enviar el mensaje');
+      message.error('Error al enviar el mensaje')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <section id="contact" className="contact">
@@ -85,6 +85,9 @@ const Contact = () => {
                   </Button>
                 </Form.Item>
               </Form>
+              <Paragraph type="secondary" style={{ marginTop: '16px' }}>
+                Envío gestionado con EmailJS · Sin backend dedicado
+              </Paragraph>
             </Card>
           </Col>
           <Col xs={24} md={12}>
@@ -100,7 +103,7 @@ const Contact = () => {
         </Row>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

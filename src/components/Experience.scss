@@ -1,10 +1,12 @@
 .experience {
-  padding: 120px 24px;
+  padding: 80px 24px;
+  min-height: 80vh;
 }
 
 .experience__container {
   max-width: 1000px;
   margin: 0 auto;
+  text-align: justify;
 }
 
 .experience__card {
@@ -34,4 +36,16 @@
 
 .experience__tags {
   margin-top: 16px;
+}
+
+.experience__image {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.experience__image .ant-image {
+  width: 60%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }

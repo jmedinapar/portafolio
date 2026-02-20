@@ -6,20 +6,18 @@ import Footer from '../components/Footer'
 const { Content } = Layout
 
 interface MainLayoutProps {
-  toggleTheme: () => void;
-  themeMode: "light" | "dark";
+  toggleTheme: () => void
+  themeMode: 'light' | 'dark'
 }
 
-const MainLayout = (props: MainLayoutProps  ) => {
-
+const MainLayout = (props: MainLayoutProps) => {
   return (
     <Layout style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-            <NavBar toggleTheme={props.toggleTheme} themeMode={props.themeMode} />
-    <Content  style={{ 
-      padding: "0" , color:"#f5f5f5", flex: 1  }}>
+      <NavBar toggleTheme={props.toggleTheme} themeMode={props.themeMode} />
+      <Content style={{ color: '#f5f5f5', flex: 1 }}>
         <Outlet />
-    </Content>
-    <Footer />
+      </Content>
+      <Footer />
     </Layout>
   )
 }

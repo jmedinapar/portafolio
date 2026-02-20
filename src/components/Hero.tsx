@@ -12,7 +12,7 @@ const Hero = () => {
         <Row gutter={[32, 32]}>
           <Col xs={24} md={10}>
             <div className="hero__image">
-              <img src="/foto.png" alt="Juan Medina, Frontend Developer" loading="lazy" />
+              <img src={`${import.meta.env.BASE_URL}foto.png`} alt="Juan Medina, Frontend Developer" loading="lazy" />
             </div>
           </Col>
           <Col xs={24} md={12}>

@@ -13,6 +13,7 @@ Bienvenido a mi portafolio profesional. Soy desarrollador Frontend especializado
 ## 🛠️ Stack Tecnológico
 
 ### Frontend
+
 - **React** 19.2.0 - Librería de UI
 - **TypeScript** 5.9.3 - Tipado estático
 - **Vite** 7.3.1 - Bundler ultra-rápido
@@ -21,11 +22,13 @@ Bienvenido a mi portafolio profesional. Soy desarrollador Frontend especializado
 - **React Router** 7.13.0 - Enrutamiento
 
 ### Herramientas de Desarrollo
+
 - **ESLint** 9.39.1 - Linting de código
 - **Prettier** 3.8.1 - Formateo automático
 - **TypeScript ESLint** 8.48.0 - Reglas TypeScript
 
 ### Servicios
+
 - **EmailJS** 4.4.1 - Envío de emails desde el navegador
 - **Ant Design Icons** 6.1.0 - Set de iconos
 
@@ -37,12 +40,14 @@ Bienvenido a mi portafolio profesional. Soy desarrollador Frontend especializado
 ## 🏃 Instalación y Ejecución
 
 ### 1. Clonar el repositorio
+
 ```bash
-git clone https://github.com/tu-usuario/portafolio.git
+git clone https://github.com/jmedinapar/portafolio.git
 cd portafolio
 ```
 
 ### 2. Instalar dependencias
+
 ```bash
 npm install
 ```
@@ -50,6 +55,7 @@ npm install
 ### 3. Configurar variables de entorno
 
 Crea un archivo `.env` en la raíz del proyecto:
+
 ```env
 VITE_EMAIL_SERVICE_ID=tu_service_id
 VITE_EMAIL_TEMPLATE_ID=tu_template_id
@@ -59,6 +65,7 @@ VITE_EMAIL_PUBLIC_KEY=tu_public_key
 Obtén estos valores creando una cuenta en [EmailJS](https://www.emailjs.com/)
 
 ### 4. Ejecutar en desarrollo
+
 ```bash
 npm run dev
 ```
@@ -66,11 +73,13 @@ npm run dev
 Se abrirá automáticamente en `http://localhost:3000`
 
 ### 5. Build para producción
+
 ```bash
 npm run build
 ```
 
 ### 6. Preview de build
+
 ```bash
 npm run preview
 ```
@@ -102,14 +111,14 @@ src/
 
 ## 🎯 Scripts Disponibles
 
-| Script | Descripción |
-|--------|-------------|
-| `npm run dev` | Inicia servidor de desarrollo |
-| `npm run build` | Construye la aplicación para producción |
-| `npm run lint` | Ejecuta ESLint |
-| `npm run format` | Formatea código con Prettier |
-| `npm run format:check` | Verifica formato sin cambios |
-| `npm run preview` | Previsualiza build de producción |
+| Script                 | Descripción                             |
+| ---------------------- | --------------------------------------- |
+| `npm run dev`          | Inicia servidor de desarrollo           |
+| `npm run build`        | Construye la aplicación para producción |
+| `npm run lint`         | Ejecuta ESLint                          |
+| `npm run format`       | Formatea código con Prettier            |
+| `npm run format:check` | Verifica formato sin cambios            |
+| `npm run preview`      | Previsualiza build de producción        |
 
 ## 📧 Configuración de EmailJS
 
@@ -124,19 +133,23 @@ Para que el formulario de contacto funcione:
 ## 🌐 Despliegue
 
 ### Opción 1: Vercel (Recomendado para Vite)
+
 ```bash
 npm i -g vercel
 vercel
 ```
 
 ### Opción 2: Netlify
+
 ```bash
 npm i -g netlify-cli
 netlify deploy
 ```
 
 ### Opción 3: GitHub Pages
+
 Edita `vite.config.ts` y agrega:
+
 ```ts
 export default defineConfig({
   base: '/portafolio/',
@@ -148,7 +161,7 @@ export default defineConfig({
 
 - **Email**: j.medina.par@gmail.com
 - **LinkedIn**: [juan-medina-paredes](https://www.linkedin.com/in/juan-medina-paredes)
-- **GitHub**: Próximamente (este portafolio será mi primer proyecto público)
+- **GitHub**: [jmedinapar](https://github.com/jmedinapar)
 
 ## 📊 Experiencia Profesional
 
@@ -158,11 +171,13 @@ Hospital Diospi Suyana | Enero 2021 – Enero 2026
 Desarrollo y mantenimiento de sistema clínico interno utilizado diariamente por personal médico y administrativo.
 
 ### Especialidades:
+
 - **Frontend**: React, TypeScript, Redux, Ant Design, SCSS
 - **Backend**: Laravel, PHP, Ruby on Rails
 - **Bases de Datos**: MySQL, SQL Server
 
 ### Logros principales:
+
 - Migración exitosa de React 16 a React 18
 - Optimización de rendimiento en vistas críticas
 - Desarrollo de módulos complejos (gestión de pacientes, reportes clínicos)
