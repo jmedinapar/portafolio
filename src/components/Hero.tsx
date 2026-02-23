@@ -1,18 +1,38 @@
-import { Button, Card, Col, Row, Space, Typography } from 'antd';
+import { Button, Card, Col, Row, Space, Typography } from 'antd'
 
-import './Hero.scss';
-import { LinkedinOutlined } from '@ant-design/icons';
+import './Hero.scss'
+import { DownloadOutlined, LinkedinOutlined } from '@ant-design/icons'
+import ReactGA from 'react-ga4'
+import { useState } from 'react'
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph } = Typography
 
 const Hero = () => {
+  const [loading, setLoading] = useState(false)
+
+  const handleDownload = () => {
+    setLoading(true)
+
+    ReactGA.event({
+      category: 'Engagement',
+      action: 'Download CV',
+    })
+
+    setTimeout(() => {
+      setLoading(false)
+    }, 600)
+  }
   return (
     <section className="hero" id="home">
       <Card variant="outlined" className="hero__card">
         <Row gutter={[32, 32]}>
           <Col xs={24} md={10}>
             <div className="hero__image">
-              <img src={`${import.meta.env.BASE_URL}foto.png`} alt="Juan Medina, Frontend Developer" loading="lazy" />
+              <img
+                src={`${import.meta.env.BASE_URL}foto.png`}
+                alt="Juan Medina, Frontend Developer"
+                loading="lazy"
+              />
             </div>
           </Col>
           <Col xs={24} md={12}>
@@ -26,7 +46,9 @@ const Hero = () => {
               <Paragraph className="hero__stack">
                 React · TypeScript · Redux · SCSS · Ant Design · Dayjs
               </Paragraph>
-              <Paragraph>Disponible para proyectos y oportunidades de trabajo remoto.</Paragraph>
+              <Paragraph>
+                Disponible para proyectos y oportunidades de trabajo remoto.
+              </Paragraph>
               <Space size="large" className="hero__buttons">
                 {/* <Button type="primary" size="large" href="#projects" >Ver Proyectos</Button> */}
                 <Button
@@ -37,6 +59,16 @@ const Hero = () => {
                 >
                   Linkedin
                 </Button>
+                <Button
+                  href={`${import.meta.env.BASE_URL}cv/Juan-Medina-CV.pdf`}
+                  size="large"
+                  loading={loading}
+                  icon={<DownloadOutlined />}
+                  download
+                  onClick={handleDownload}
+                >
+                  Descargar CV
+                </Button>
                 <Button type="primary" size="large" href="#contact">
                   Contactar
                 </Button>
@@ -46,7 +78,7 @@ const Hero = () => {
         </Row>
       </Card>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
