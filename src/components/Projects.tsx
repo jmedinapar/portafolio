@@ -1,42 +1,95 @@
-import { Card, Col, Row, Typography, Tag, Button, Space } from "antd";
-import { GithubOutlined, LinkOutlined } from "@ant-design/icons";
-import "./Projects.scss";
+import { Card, Col, Row, Typography, Tag, Button, Space, Image } from 'antd'
+import { GithubOutlined, LinkOutlined } from '@ant-design/icons'
+import './Projects.scss'
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph } = Typography
 
 interface Project {
-  title: string;
-  description: string;
-  stack: string[];
-  demo?: string;
-  code?: string;
+  title: string
+  description: string
+  stack: string[]
+  demo?: string
+  code?: string
+  image?: string
 }
 
-const projects: Project[] = [
+interface IndependentWork {
+  title: string
+  description: string
+  stack: string[]
+  website: string
+  image?: string
+}
+
+const independentWorks: IndependentWork[] = [
   {
-    title: "Dashboard Hospital",
+    title: 'Fisioterapia Rouse',
     description:
-      "Sistema para gestión clínica con visualización de pacientes, hospitalización y reportes. Optimizado para rendimiento y mantenimiento.",
-    stack: ["React", "TypeScript", "Ant Design", "Laravel"],
-    demo: "#",
-    code: "#",
+      'Landing page y sistema de gestión para una clínica de fisioterapia, con enfoque en mostrar servicios, captar pacientes,  los terapeutas agendan citas, visualizan reportes y controlar pagos de manera clara y organizada.',
+    stack: ['React', 'TypeScript', 'SCSS', 'Vite', 'Mantine', 'Vercel', 'Firebase'],
+    website: 'https://www.fisioterapia-rouse.net.pe/',
+    image: 'https://www.fisioterapia-rouse.net.pe/hero.webp',
   },
-  {
-    title: "Mini App Firebase",
-    description:
-      "Aplicación con autenticación y CRUD en tiempo real usando Firebase. Manejo de estado y arquitectura modular.",
-    stack: ["React", "TypeScript", "Firebase", "SCSS"],
-    demo: "#",
-    code: "#",
-  },
-];
+]
+
+const projects: Project[] = []
 
 const Projects = () => {
   return (
     <section className="projects" id="projects">
       <Title level={2} className="projects__title">
-        Projects
+        Proyectos y trabajos independientes
       </Title>
+
+      <div className="projects__section">
+        <Title level={3} className="projects__subtitle">
+          Trabajos independientes
+        </Title>
+
+        <Row gutter={[24, 24]}>
+          {independentWorks.map((work) => (
+            <Col xs={24} md={12} key={work.title}>
+              <Card
+                hoverable
+                className="projects__card projects__card--featured"
+                cover={
+                  work.image ? (
+                    <img src={work.image} alt={work.title} className="projects__image" />
+                  ) : (
+                    <div className="projects__image-placeholder">Preview</div>
+                  )
+                }
+              >
+                <div className="projects__cardHeader">
+                  <Tag color="green">Trabajo independiente</Tag>
+                  <Button
+                    type="link"
+                    icon={<LinkOutlined />}
+                    href={work.website}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Ver web
+                  </Button>
+                </div>
+
+                <Title level={4}>{work.title}</Title>
+                <Paragraph>{work.description}</Paragraph>
+
+                <div className="projects__tags">
+                  <Space size="small">
+                    {work.stack.map((tech) => (
+                      <Tag key={tech} color="blue">
+                        {tech}
+                      </Tag>
+                    ))}
+                  </Space>
+                </div>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </div>
 
       <Row gutter={[24, 24]}>
         {projects.map((project) => (
@@ -45,9 +98,16 @@ const Projects = () => {
               hoverable
               className="projects__card"
               cover={
-                <div className="projects__image-placeholder">
-                  Preview
-                </div>
+                project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    className="projects__image"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="projects__image-placeholder">Preview</div>
+                )
               }
             >
               <Title level={4}>{project.title}</Title>
@@ -56,30 +116,22 @@ const Projects = () => {
 
               <div className="projects__tags">
                 <Space size="small">
-
-                {project.stack.map((tech) => (
+                  {project.stack.map((tech) => (
                     <Tag key={tech} color="blue">
-                    {tech}
-                  </Tag>
-                ))}
+                      {tech}
+                    </Tag>
+                  ))}
                 </Space>
               </div>
 
               <Space style={{ marginTop: 16 }}>
                 {project.demo && (
-                  <Button
-                    type="primary"
-                    icon={<LinkOutlined />}
-                    href={project.demo}
-                  >
+                  <Button type="primary" icon={<LinkOutlined />} href={project.demo}>
                     Demo
                   </Button>
                 )}
                 {project.code && (
-                  <Button
-                    icon={<GithubOutlined />}
-                    href={project.code}
-                  >
+                  <Button icon={<GithubOutlined />} href={project.code}>
                     Code
                   </Button>
                 )}
@@ -89,7 +141,7 @@ const Projects = () => {
         ))}
       </Row>
     </section>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

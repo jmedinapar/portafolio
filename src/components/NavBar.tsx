@@ -1,7 +1,7 @@
 import { Layout, Menu, Drawer, Button, Grid, Switch, Typography } from 'antd'
 import { MenuOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons'
 
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import useActiveSection from '../hooks/useActiveSection'
 
 const { Header } = Layout
@@ -26,6 +26,9 @@ const NavBar = (props: NavBarProps) => {
     { key: 'experience', label: <a href="#experience">Experiencia</a> },
     { key: 'contact', label: <a href="#contact">Contacto</a> },
   ]
+  const onCloseDrawer = useCallback(() => {
+    setOpen(false)
+  }, [])
 
   return (
     <Header
@@ -38,7 +41,8 @@ const NavBar = (props: NavBarProps) => {
         top: 0,
         zIndex: 1000,
         backgroundColor: props.themeMode === 'dark' ? '#141414' : '#fff',
-        borderBottom: props.themeMode === 'dark' ? '1px solid #303030' : '1px solid #f0f0f0',
+        borderBottom:
+          props.themeMode === 'dark' ? '1px solid #303030' : '1px solid #f0f0f0',
       }}
     >
       <Title
@@ -70,8 +74,8 @@ const NavBar = (props: NavBarProps) => {
       <Drawer
         title="Menu"
         placement="right"
-        closable={false}
-        onClose={() => setOpen(false)}
+        closable={true}
+        onClose={onCloseDrawer}
         open={open}
       >
         <Menu
@@ -79,7 +83,7 @@ const NavBar = (props: NavBarProps) => {
           mode="vertical"
           selectedKeys={[activeSection]}
           items={menuItems}
-          onClick={() => setOpen(false)}
+          onClick={onCloseDrawer}
         />
       </Drawer>
     </Header>
