@@ -1,4 +1,4 @@
-import { Card, Col, Row, Typography, Tag, Button, Space, Image } from 'antd'
+import { Card, Col, Row, Typography, Tag, Button, Space, Image, Flex } from 'antd'
 import { GithubOutlined, LinkOutlined } from '@ant-design/icons'
 import './Projects.scss'
 
@@ -77,11 +77,9 @@ const Projects = () => {
                 <Paragraph>{work.description}</Paragraph>
 
                 <div className="projects__tags">
-                  <Space size="small">
+                  <Space size="small" wrap>
                     {work.stack.map((tech) => (
-                      <Tag key={tech} color="blue">
-                        {tech}
-                      </Tag>
+                      <Tag key={tech}>{tech}</Tag>
                     ))}
                   </Space>
                 </div>
